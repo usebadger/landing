@@ -1,0 +1,130 @@
+html {
+  font-size: 20px;
+}
+
+.achievement-item {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1) rotate(0deg);
+  filter: contrast(1);
+  opacity: 1;
+}
+
+.achievement-item.slide-in {
+  transform: scale(0.8) rotate(-20deg);
+  filter: contrast(1.5);
+  opacity: 0;
+}
+
+.achievements-container {
+  overflow: hidden;
+  height: 300px;
+}
+
+#achievements-list {
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(0);
+}
+
+#achievements-list.slide-up {
+  transform: translateY(-80px); /* Approximate height of one item + gap */
+  transition: none; /* No transition for immediate jump up */
+}
+
+/* Carousel Styles */
+.setup-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: 8px;
+  min-height: 350px;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 33.333%;
+  width: 33.333%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.carousel-slide > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-btn {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carousel-dots button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.code-block {
+  background: #1a1a1a !important;
+  border: 1px solid #333;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  line-height: 1.4;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.step-number {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .setup-carousel {
+    max-width: 100%;
+    padding: 1rem;
+    min-height: 350px;
+  }
+
+  .carousel-container {
+    min-height: 300px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .code-block {
+    font-size: 11px;
+    padding: 0.75rem;
+    max-height: 150px;
+  }
+}
