@@ -217,18 +217,9 @@
           </div>
         </dl>
       </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4 p-8 shadow-lg rounded-md">
-          <h2 class="text-2xl font-bold text-center">Use Badger</h2>
-          <ul class="flex flex-col gap-4 text-lg items-center">
-            <li>🎯 Milestones</li>
-            <li>🔥 Streaks</li>
-            <li>🏆 Custom Rewards</li>
-            <li>🏅 Leaderboards</li>
-          </ul>
-        </div>
+      <div class="flex flex-col gap-8">
         <div
-          class="setup-carousel bg-white rounded-lg shadow-lg p-6 hidden md:block"
+          class="setup-carousel bg-white rounded-lg shadow-lg p-6 hidden md:block lg:w-2/3 xl:w-1/2 mx-auto"
         >
           <div class="carousel-container relative">
             <div
@@ -259,6 +250,36 @@
               →
             </button>
           </div>
+        </div>
+        <div class="space-y-4 p-8 shadow-lg rounded-md max-w-2xl mx-auto">
+          <h2 class="text-2xl font-bold text-center">Why use Badger?</h2>
+          <div class="space-y-4 text-sm">
+            <p>
+              Building achievements always starts simple, but quickly snowballs
+              into complexity...
+            </p>
+            <p>
+              Tracking streaks, avoiding duplicates, handling race conditions,
+              writing admin tooling... it quickly turns into a mini-framework
+              you have to maintain forever.
+            </p>
+            <p>
+              <strong>Badger does all that for you</strong>, so you can stay
+              focused on your product.
+            </p>
+          </div>
+          <ul class="list-disc list-inside space-y-4">
+            <li>
+              🎯 Clean, flexible API for tracking and rewarding user actions
+            </li>
+            <li>
+              ⚡ Built-in support for streaks, milestones, webhooks, and more
+            </li>
+            <li>
+              🧘 No dashboards to build, no cron jobs to maintain, no race
+              conditions to debug
+            </li>
+          </ul>
         </div>
       </div>
     </div>
