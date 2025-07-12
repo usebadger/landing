@@ -160,12 +160,13 @@ const demoSteps = [
     title: "Create a badge",
     description: "Specify an event and criteria",
     note: "💡 You can create badges via API, SDK, or the dashboard",
-    example: `badger.create({
+    example: `badger.badges.create({
   name: 'Frequent Buyer',
   description: 'Make 10 purchases',
   criteria: {
     event: "purchase_made",
-    count: 10
+    type: "COUNT",
+    value: 10
   }
 })`,
   },
@@ -174,7 +175,7 @@ const demoSteps = [
     description:
       "When a user does something in your app, send an event to Badger",
     note: "📊 We keep track of stats and progress for you",
-    example: `badger.emit(
+    example: `badger.events.emit(
   "purchase_made",
   {
     productId: "123",
@@ -187,10 +188,10 @@ const demoSteps = [
     description: "Get notified instantly when a user earns a badge",
     note: "",
     example: `server.post("/webhook", (req, res) => {
-      const { type, userId, badgeId } = req.body;
+      const { type, data: { userId, badge } } = req.body;
 
-      if (type === "badger.badge_unlocked") {
-        console.log("New badge unlocked:", userId, badgeId);
+      if (type === "user.badge.unlocked") {
+        console.log("New badge unlocked:", userId, badge);
       }
 })`,
   },
@@ -198,91 +199,9 @@ const demoSteps = [
     title: "View badges",
     description: "Easily fetch a user's badges",
     note: "👀 You can view all badges in the dashboard",
-    example: `badger.getBadges(userId: "456")`,
+    example: `badger.badges.fetch({ userId: "456" })`,
   },
 ];
-
-// badger.create({
-//   name: 'First purchase',
-//   description: 'Make your first purchase',
-//   criteria: {
-//     event: "purchase_made"
-//   }
-// })
-
-// badger.create({
-//   name: "Frequent Buyer",
-//   description: "Make 10 purchases",
-//   criteria: {
-//     event: "purchase_made",
-//     count: 10,
-//   },
-// });
-
-// badger.create({
-//   name: "Buy this product",
-//   description: "Buy a specific product",
-//   criteria: {
-//     event: "purchase_made",
-//     count: 1,
-//     metadata: {
-//       productId: "123",
-//     },
-//   },
-// });
-
-// badger.create({
-//   name: "Buy this product a lot",
-//   description: "Buy a specific product 5 times",
-//   criteria: {
-//     event: "purchase_made",
-//     count: 5,
-//     metadata: {
-//       productId: "123",
-//     },
-//   },
-// });
-
-// badger.create({
-//   name: "Buy any product a lot",
-//   description: "Buy any product 10 times",
-//   criteria: {
-//     event: "purchase_made",
-//     count: 10,
-//     groupBy: "productId",
-//   },
-// });
-
-// badger.create({
-//   name: "Buy 5 different products",
-//   description: "Buy 5 different products",
-//   criteria: {
-//     event: "purchase_made",
-//     count: 5,
-//     distinct: "productId",
-//   },
-// });
-
-// badger.create({
-//   name: "Buy two different specific products",
-//   description: "Buy two different specific products",
-//   criteria: [
-//     {
-//       event: "purchase_made",
-//       metadata: {
-//         productId: "123",
-//       },
-//       count: 1,
-//     },
-//     {
-//       event: "purchase_made",
-//       metadata: {
-//         productId: "456",
-//       },
-//       count: 1,
-//     },
-//   ],
-// });
 
 // Setup Carousel Functionality
 const carouselTrack = document.getElementById("carousel-track");
