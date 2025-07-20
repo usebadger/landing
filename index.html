@@ -66,31 +66,56 @@
   </head>
   <body class="bg-bg text-fg rounded relative">
     <div class="container mx-auto flex flex-col gap-12 p-4">
-      <h1 class="text-5xl flex items-center gap-4 justify-center">
-        <span> Badger </span>
-        <img src="/mascot.png" class="h-20" />
-      </h1>
+      <div class="flex items-center gap-4 justify-between border-b-2 pb-2">
+        <h1 class="text-4xl flex items-center gap-4">
+          <img src="/mascot.png" class="h-14" />
+          <span>Badger</span>
+        </h1>
+        <ul class="flex items-center gap-4">
+          <a
+            href="https://docs.usebadger.dev"
+            class="hover:underline"
+            target="_blank"
+            >Docs</a
+          >
+          <a href="#pricing" class="hover:underline">Pricing</a>
+          <a href="https://app.usebadger.dev" class="hover:underline"
+            >Dashboard</a
+          >
+        </ul>
+      </div>
       <h2 class="text-2xl text-center">The easiest way to gamify your app.</h2>
       <div class="grid xl:grid-cols-4 gap-8">
         <div class="space-y-4">
-          <p>
-            Badger is a developer-first gamification platform. Create badges and
-            rewards in minutes. Integrate seamlessly into any app with our
-            simple REST API.
+          <p class="text-center">
+            Badger is a lightweight, developer-first gamification platform.
+            Create badges and rewards in minutes. Integrate seamlessly into any
+            app.
           </p>
-          <div class="flex justify-center gap-8">
-            <button
-              class="ml-onclick-form bg-primary text-primary-against px-4 py-2 rounded-md"
-              onclick="ml('show', 'BYLEeN', true)"
+          <div
+            class="flex justify-center gap-8 xl:flex-col xl:gap-1 text-center"
+          >
+            <a
+              href="https://app.usebadger.dev"
+              target="_blank"
+              class="bg-primary text-primary-against px-4 py-2 rounded-md"
             >
               Get Started
-            </button>
-            <!-- <a
-              href="https://docs.usebadger.dev"
+            </a>
+            <a
+              href="https://demo.usebadger.dev"
+              target="_blank"
               class="bg-secondary text-secondary-against px-4 py-2 rounded-md"
             >
+              Demo
+            </a>
+            <a
+              href="https://docs.usebadger.dev"
+              target="_blank"
+              class="bg-tertiary text-tertiary-against px-4 py-2 rounded-md"
+            >
               Docs
-            </a> -->
+            </a>
           </div>
         </div>
         <div class="xl:col-span-3 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -250,7 +275,9 @@
             </button>
           </div>
         </div>
-        <div class="space-y-4 p-8 shadow-lg rounded-md max-w-2xl mx-auto">
+        <div
+          class="space-y-4 p-8 shadow-lg rounded-md max-w-2xl mx-auto bg-white"
+        >
           <h2 class="text-2xl font-bold text-center">Why use Badger?</h2>
           <div class="space-y-4 text-sm">
             <p>
@@ -280,22 +307,233 @@
             </li>
           </ul>
         </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-4 space-y-4" id="pricing">
+          <h2 class="text-2xl font-bold text-center">Pricing</h2>
+          <p class="text-center text-gray-500 text-sm">
+            Get started for free. Scale with your userbase. No hidden costs or
+            unexpected usage spikes.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <li
+              class="flex flex-col gap-2 border-2 rounded-lg shadow-lg px-8 py-4"
+            >
+              <div>Free</div>
+              <div class="flex gap-2 items-center">
+                <div class="text-2xl font-bold">$0</div>
+                <div class="text-xs font-light text-gray-500 flex flex-col">
+                  <span> per </span>
+                  <span> month </span>
+                </div>
+              </div>
+              <a
+                href="https://app.usebadger.dev"
+                target="_blank"
+                class="bg-primary text-primary-against px-4 py-2 rounded-md text-center"
+                >Get Started</a
+              >
+              <div class="text-xs text-gray-600">This includes:</div>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>1 App</li>
+                <li>25 Badges</li>
+                <li>100 Active Users</li>
+                <li>2.5k Events</li>
+              </ul>
+            </li>
+            <li
+              class="flex flex-col gap-2 border-2 rounded-lg shadow-lg px-8 py-4"
+            >
+              <div>Starter</div>
+              <div class="flex gap-2 items-center">
+                <div class="text-2xl font-bold">$15</div>
+                <div class="text-xs font-light text-gray-500 flex flex-col">
+                  <span> per </span>
+                  <span> month </span>
+                </div>
+              </div>
+              <a
+                href="https://app.usebadger.dev/settings/billing"
+                target="_blank"
+                class="bg-primary text-primary-against px-4 py-2 rounded-md text-center"
+                >Subscribe</a
+              >
+              <div class="text-xs text-gray-600">This includes:</div>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>3 Apps</li>
+                <li>50 Badges</li>
+                <li>1k Active Users</li>
+                <li>15k Events</li>
+              </ul>
+            </li>
+            <li
+              class="flex flex-col gap-2 border-2 rounded-lg shadow-lg px-8 py-4"
+            >
+              <div>Growth</div>
+              <div class="flex gap-2 items-center">
+                <div class="text-2xl font-bold">$39</div>
+                <div class="text-xs font-light text-gray-500 flex flex-col">
+                  <span> per </span>
+                  <span> month </span>
+                </div>
+              </div>
+              <a
+                href="https://app.usebadger.dev/settings/billing"
+                target="_blank"
+                class="bg-primary text-primary-against px-4 py-2 rounded-md text-center"
+                >Subscribe</a
+              >
+              <div class="text-xs text-gray-600">This includes:</div>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>7 Apps</li>
+                <li>100 Badges</li>
+                <li>5k Active Users</li>
+                <li>125k Events</li>
+              </ul>
+            </li>
+            <li
+              class="flex flex-col gap-2 border-2 rounded-lg shadow-lg px-8 py-4"
+            >
+              <div>Pro</div>
+              <div class="flex gap-2 items-center">
+                <div class="text-2xl font-bold">$79</div>
+                <div class="text-xs font-light text-gray-500 flex flex-col">
+                  <span> per </span>
+                  <span> month </span>
+                </div>
+              </div>
+              <a
+                href="https://app.usebadger.dev/settings/billing"
+                target="_blank"
+                class="bg-primary text-primary-against px-4 py-2 rounded-md text-center"
+                >Subscribe</a
+              >
+              <div class="text-xs text-gray-600">This includes:</div>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>10 Apps</li>
+                <li>500 Badges</li>
+                <li>10k Active Users</li>
+                <li>250k Events</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- Simple Footer -->
+    <!-- Footer -->
     <footer
       class="bg-black bg-opacity-10 mt-16 border-t border-black border-opacity-10"
     >
       <div class="container mx-auto px-4 py-8">
-        <div class="text-center">
-          <div class="flex items-center justify-center gap-3 mb-4">
-            <img src="/mascot.png" class="h-6" alt="Badger" />
-            <span class="text-lg font-bold">Badger</span>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Brand Section -->
+          <div class="text-center md:text-left">
+            <div
+              class="flex items-center justify-center md:justify-start gap-3 mb-4"
+            >
+              <img src="/mascot.png" class="h-6" alt="Badger" />
+              <span class="text-lg font-bold">Badger</span>
+            </div>
+            <p class="text-muted text-sm mb-4">
+              The easiest way to add achievements to your app
+            </p>
           </div>
-          <p class="text-muted text-sm mb-4">
-            The easiest way to add achievements to your app
-          </p>
+
+          <!-- Product Links -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-3">Product</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="https://app.usebadger.dev"
+                  target="_blank"
+                  class="hover:underline"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://demo.usebadger.dev"
+                  target="_blank"
+                  class="hover:underline"
+                  >Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.usebadger.dev"
+                  target="_blank"
+                  class="hover:underline"
+                  >Documentation</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources Links -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-3">Resources</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="https://docs.usebadger.dev/getting-started"
+                  target="_blank"
+                  class="hover:underline"
+                  >Getting Started</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.usebadger.dev/api-reference"
+                  target="_blank"
+                  class="hover:underline"
+                  >API Reference</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.usebadger.dev/webhooks"
+                  target="_blank"
+                  class="hover:underline"
+                  >Webhooks</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Links -->
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-3">Company</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="https://docs.usebadger.dev/privacy"
+                  target="_blank"
+                  class="hover:underline"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://docs.usebadger.dev/terms"
+                  target="_blank"
+                  class="hover:underline"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="mailto:hello@usebadger.dev" class="hover:underline"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="border-t border-black border-opacity-10 mt-8 pt-8 text-center"
+        >
           <div class="text-muted text-xs">
             © 2025 Badger. All rights reserved.
           </div>
@@ -304,26 +542,5 @@
     </footer>
 
     <script src="/code.js"></script>
-    <script>
-      (function (w, d, e, u, f, l, n) {
-        (w[f] =
-          w[f] ||
-          function () {
-            (w[f].q = w[f].q || []).push(arguments);
-          }),
-          (l = d.createElement(e)),
-          (l.async = 1),
-          (l.src = u),
-          (n = d.getElementsByTagName(e)[0]),
-          n.parentNode.insertBefore(l, n);
-      })(
-        window,
-        document,
-        "script",
-        "https://assets.mailerlite.com/js/universal.js",
-        "ml"
-      );
-      ml("account", "1508449");
-    </script>
   </body>
 </html>
