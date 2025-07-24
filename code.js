@@ -157,31 +157,25 @@ setTimeout(incrementStreak, initialInterval);
 
 const demoSteps = [
   {
-    title: "Create a badge",
-    description: "Specify an event and criteria",
-    note: "💡 You can create badges via API, SDK, or the dashboard",
-    example: `badger.badges.create({
-  name: 'Frequent Buyer',
-  description: 'Make 10 purchases',
-  criteria: {
-    event: "purchase_made",
-    type: "COUNT",
-    value: 10
-  }
-})`,
-  },
-  {
     title: "Emit events from your app",
     description:
       "When a user does something in your app, send an event to Badger",
     note: "📊 We keep track of stats and progress for you",
-    example: `badger.events.emit(
-  "purchase_made",
-  {
+    example: `const badger = new BadgerClient({ appId, appSecret });
+
+badger.events.sendEvent({
+  event: "purchase_made",
+  userId: "456",
+  metadata: {
     productId: "123",
-    userId: "456",
   }
-)`,
+});`,
+  },
+  {
+    title: "Create a badge",
+    description: "Specify an event and criteria",
+    note: "",
+    example: `<img src="create-badge-preview.png" alt="Badge creation interface" class="w-full rounded-lg shadow-lg object-contain" />`,
   },
   {
     title: "Earn badges!",
@@ -193,13 +187,13 @@ const demoSteps = [
       if (type === "user.badge.unlocked") {
         console.log("New badge unlocked:", userId, badge);
       }
-})`,
+});`,
   },
   {
     title: "View badges",
     description: "Easily fetch a user's badges",
     note: "👀 You can view all badges in the dashboard",
-    example: `badger.badges.fetch({ userId: "456" })`,
+    example: `const { badges } = await badger.users.getUserBadges("456");`,
   },
 ];
 
@@ -223,7 +217,9 @@ function createCarouselSlides() {
       <div class="text-center space-y-3 w-full">
         <h4 class="text-lg font-semibold text-fg">${step.title}</h4>
         <p class="text-muted text-sm">${step.description}</p>
-        <div class="code-block bg-gray-900 text-green-400 p-3 rounded text-xs font-mono text-left overflow-x-auto w-full">
+        <div class="code-block text-green-400 ${
+          step.example.includes("<img") ? "p-0" : "p-3 bg-gray-900"
+        } rounded text-xs font-mono text-left overflow-x-auto w-full">
         <pre><code>${step.example}</code></pre>
         </div>
         ${

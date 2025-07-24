@@ -85,11 +85,8 @@ html {
 }
 
 .code-block {
-  background: #1a1a1a !important;
-  border: 1px solid #333;
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   line-height: 1.4;
-  max-height: 200px;
   overflow-y: auto;
   width: 100%;
 }
