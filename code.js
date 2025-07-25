@@ -161,7 +161,10 @@ const demoSteps = [
     description:
       "When a user does something in your app, send an event to Badger",
     note: "📊 We keep track of stats and progress for you",
-    example: `const badger = new BadgerClient({ appId, appSecret });
+    example: `const badger = new BadgerClient({
+  appId,
+  appSecret
+});
 
 badger.events.sendEvent({
   event: "purchase_made",
@@ -182,11 +185,13 @@ badger.events.sendEvent({
     description: "Get notified instantly when a user earns a badge",
     note: "",
     example: `server.post("/webhook", (req, res) => {
-      const { type, data: { userId, badge } } = req.body;
-
-      if (type === "user.badge.unlocked") {
-        console.log("New badge unlocked:", userId, badge);
-      }
+  if (req.body.type === "user.badge.unlocked") {
+    console.log(
+      "New badge unlocked:",
+      req.body.data.userId,
+      req.body.data.badge
+    );
+  }
 });`,
   },
   {
