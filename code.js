@@ -178,7 +178,7 @@ badger.events.sendEvent({
     title: "Create a badge",
     description: "Specify an event and criteria",
     note: "",
-    example: `<img src="create-badge-preview.png" alt="Badge creation interface" class="w-full rounded-lg shadow-lg object-contain" />`,
+    example: `<img src="/create-badge-preview.webp" alt="Badge creation interface" class="w-full rounded-lg shadow-lg object-contain" loading="lazy" />`,
   },
   {
     title: "Earn badges!",

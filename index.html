@@ -31,11 +31,11 @@
     />
     <meta name="twitter:image" content="https://usebadger.dev/preview.png" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="stylesheet" href="tailwind.css" /> -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/tailwind.css" />
     <link rel="icon" href="/favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -62,7 +62,7 @@
           },
         },
       };
-    </script>
+    </script> -->
   </head>
   <body class="bg-bg text-fg rounded relative">
     <div class="container mx-auto flex flex-col gap-12 p-4">
@@ -70,7 +70,7 @@
         class="flex flex-col md:flex-row items-center gap-4 justify-between border-b-2 pb-2"
       >
         <h1 class="text-4xl flex items-center gap-4">
-          <img src="/mascot.png" class="h-14" />
+          <img src="/mascot.webp" class="h-14" width="50" height="70" />
           <span>Badger</span>
         </h1>
         <ul class="flex items-center gap-4">
@@ -433,7 +433,13 @@
             <div
               class="flex items-center justify-center md:justify-start gap-3 mb-4"
             >
-              <img src="/mascot.png" class="h-6" alt="Badger" />
+              <img
+                src="/mascot.webp"
+                class="h-6"
+                alt="Badger"
+                width="21"
+                height="30"
+              />
               <span class="text-lg font-bold">Badger</span>
             </div>
             <p class="text-muted text-sm mb-4">
@@ -543,6 +549,6 @@
       </div>
     </footer>
 
-    <script src="/code.js"></script>
+    <script src="/code.js" async></script>
   </body>
 </html>
