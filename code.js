@@ -400,3 +400,10 @@ updateMilestoneTracker();
 
 // Start the LOC counter
 setTimeout(incrementLOC, locIncrementInterval);
+
+document.querySelectorAll("a").forEach((a) => {
+  if (a.host !== window.location.host && !a.getAttribute("data-umami-event")) {
+    a.setAttribute("data-umami-event", "link-click");
+    a.setAttribute("data-umami-event-url", a.href);
+  }
+});
